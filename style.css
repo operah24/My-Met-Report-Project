@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    
+    background: url('default2.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; 
+  background-size: cover;
+  color: white;
+  
+    
+}
+
+#header{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cookie', cursive;
+    font-size: 40px;
+}
+
+#date{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cookie', cursive;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+i:hover {
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.5); 
+    transform: scale(1.5);
+    color: skyblue; 
+  }
+
+.row{
+    margin-top: 50px;
+}
+
+#searchInput{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cookie', cursive;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#add{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cookie', cursive;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#add:hover {background-color: skyblue}
+
+#add:active {
+  background-color:  rgb(132, 220, 247);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#weatherDescriptionHeader{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cookie', cursive;
+    font-family: 'Milonga', cursive;
+    font-family: 'Oleo Script', cursive;
+    font-family: 'Patrick Hand', cursive;
+    vertical-align: 50%;
+    font-size: 28px;
+}
+
+#weatherContainer{
+    font-size: 30px;
+    text-shadow: 2px 2px 1px black;
+    box-shadow: 1px 1px 5px black;
+    padding: 50px;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: 50px;
+    visibility: hidden;
+}
+#cityHeader{
+    font-size: 60px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cookie', cursive;
+    font-family: 'Milonga', cursive;
+    font-family: 'Patrick Hand', cursive;
+}
+
+#weatherMain{
+    display: block;
+    margin-bottom: 20px;
+
+}
+#weatherMain div{
+    display: inline-block;
+}
+
+#temperature{
+    vertical-align: 25%;
+    font-size: 38px;
+}
+
+#documentIconImg{
+    vertical-align: 2%;
+    width: 50px;
+   
+}
+
+#documentIconImg:hover{
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.5); 
+    transform: scale(1.5); 
+}
+
+.bottonDetails{
+    display: block;
+    text-align: right;
+    font-size:25px ;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cookie', cursive;
+    font-family: 'Milonga', cursive;
+    font-family: 'Oleo Script', cursive;
+    font-family: 'Patrick Hand', cursive;
+}
+
+hr{
+    margin-bottom: 20px;
+    border-top: 5px solid white;
+}
