@@ -17,7 +17,7 @@ function getSearchMethod(searchTerm){
 
 function searchWeather(searchTerm){
     getSearchMethod(searchTerm);
-    fetch(`http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${"3484e8eb9e92c43d0f488d92f1448cbc"}&units=${units}`).then(result =>{
+    fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${"3484e8eb9e92c43d0f488d92f1448cbc"}&units=${units}`).then(result =>{
         return result.json();
     }).then(result => {
         init(result);
