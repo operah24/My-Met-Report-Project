@@ -87,6 +87,17 @@ i:hover {
     font-family: 'Cookie', cursive;
     font-family: 'Milonga', cursive;
     font-family: 'Patrick Hand', cursive;
+    display: inline-block;
+}
+
+#cityCountry{
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cookie', cursive;
+    font-family: 'Milonga', cursive;
+    font-family: 'Patrick Hand', cursive;
+    
+
 }
 
 #weatherMain{

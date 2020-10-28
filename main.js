@@ -13,7 +13,10 @@ function getSearchMethod(searchTerm){
         searchMethod = 'zip';
     else
         searchMethod = 'q';
+
 }
+
+
 
 function searchWeather(searchTerm){
     getSearchMethod(searchTerm);
@@ -26,6 +29,7 @@ function searchWeather(searchTerm){
 }
     
 function init(resultFromServer){
+    console.log(resultFromServer)
     // Set background images for various weather information
    switch (resultFromServer.weather[0].main) {
        case 'Clear':
@@ -59,6 +63,7 @@ function init(resultFromServer){
    let humidityElement =document. getElementById("humidity");
    let windSpeedElement = document. getElementById("windSpeed");
    let cityHeader = document.getElementById("cityHeader");
+   let cityCountry = document.getElementById("cityCountry");
    let weatherIcon = document.getElementById("documentIconImg");
 
    weatherIcon.src = " http://openweathermap.org/img/w/" + resultFromServer.weather[0].icon + ".png";
@@ -69,9 +74,14 @@ function init(resultFromServer){
    temperatureElement.innerHTML = Math.floor(resultFromServer.main.temp) + '&#8451';
    windSpeedElement.innerHTML = 'Winds at ' + Math.floor(resultFromServer.wind.speed) + 'm/s';
     cityHeader.innerHTML = resultFromServer.name;
+    cityCountry.innerHTML = resultFromServer.sys.country;
    humidityElement.innerHTML = 'Humidity levels at ' + resultFromServer.main.humidity + " % ";
 
+   
+
    setPositionForWeatherInfo();
+  
+  
 }
     // Set position of weather container according to weather info
 function setPositionForWeatherInfo(){
@@ -85,9 +95,46 @@ function setPositionForWeatherInfo(){
     // Add eventlistener to search botton
 document.getElementById("add").addEventListener('click', ()=>{
     let searchTerm = document.getElementById("searchInput").value;
-    if(searchTerm)
+    if(searchTerm) 
         searchWeather(searchTerm);
         searchInput.value = ''
+
+    // validate
+        // if(searchTerm === ''){
+        //     let div = document.getElementById("errorMessage");
+        //     div.innerHTML = 'Enter Your City Name Or Zip Code!';
+        //     // div.show();
+        //     return false;
+           
+        // }
+
+        // //  setTimeout(function(){document.getElementById('errorMessage').style.display='none';},3000);
+        //  setTimeout(() => document.getElementById("errorMessage").remove(),
+    //     //     3000);
+    // if(searchTerm === ''){
+    //     errorMessage('Enter Your City Name Or Zip Code')
+    // }
+
+    // function errorMessage(error){
+    //     let errorDiv = document.createElement('div');
+
+    //     let row = document.querySelector('.row');
+    //     let weatherContainer = document.querySelector('#weatherContainer')
+
+    //     errorDiv.className = 'alert alert-danger';
+    //     errorDiv.appendChild(document.createTextNode(error));
+
+    //     row.insertBefore(errorDiv, weatherContainer);
+
+    //     setTimeout(clearError, 3000);
+
+    // }
+
+    // function clearError(){
+    //     document.querySelector('.alert').remove();
+    // }
+
+        
 })
 window.addEventListener("keydown", (e) => {
     if (e.which === 13) {
@@ -98,5 +145,3 @@ window.addEventListener("keydown", (e) => {
     }
   });
 
-
-     
