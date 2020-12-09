@@ -24,12 +24,14 @@ function searchWeather(searchTerm){
         return result.json();
     }).then(result => {
         init(result);
+    }).catch(error =>{
+        return error;
     })
     
 }
     
 function init(resultFromServer){
-    console.log(resultFromServer)
+   
     // Set background images for various weather information
    switch (resultFromServer.weather[0].main) {
        case 'Clear':
@@ -99,41 +101,7 @@ document.getElementById("add").addEventListener('click', ()=>{
         searchWeather(searchTerm);
         searchInput.value = ''
 
-    // validate
-        // if(searchTerm === ''){
-        //     let div = document.getElementById("errorMessage");
-        //     div.innerHTML = 'Enter Your City Name Or Zip Code!';
-        //     // div.show();
-        //     return false;
-           
-        // }
-
-        // //  setTimeout(function(){document.getElementById('errorMessage').style.display='none';},3000);
-        //  setTimeout(() => document.getElementById("errorMessage").remove(),
-    //     //     3000);
-    // if(searchTerm === ''){
-    //     errorMessage('Enter Your City Name Or Zip Code')
-    // }
-
-    // function errorMessage(error){
-    //     let errorDiv = document.createElement('div');
-
-    //     let row = document.querySelector('.row');
-    //     let weatherContainer = document.querySelector('#weatherContainer')
-
-    //     errorDiv.className = 'alert alert-danger';
-    //     errorDiv.appendChild(document.createTextNode(error));
-
-    //     row.insertBefore(errorDiv, weatherContainer);
-
-    //     setTimeout(clearError, 3000);
-
-    // }
-
-    // function clearError(){
-    //     document.querySelector('.alert').remove();
-    // }
-
+    
         
 })
 window.addEventListener("keydown", (e) => {
